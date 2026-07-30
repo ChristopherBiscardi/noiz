@@ -19,8 +19,10 @@ authors = ["Elliott Pierce"]
 description = "A simple, configurable, blazingly fast noise library built for and with Bevy."
 
 [dependencies]
-bevy_math = { version = "0.19", default-features = false, features = ["curve"] }
-bevy_reflect = { version = "0.19", default-features = false, features = [
+bevy_math = { version = "0.20.0-dev", default-features = false, features = [
+  "curve",
+] }
+bevy_reflect = { version = "0.20.0-dev", default-features = false, features = [
   "glam",
 ], optional = true }
 serde = { version = "1", default-features = false, features = [
@@ -29,7 +31,7 @@ serde = { version = "1", default-features = false, features = [
 
 [dev-dependencies]
 # for examples
-bevy = "0.19"
+bevy = "0.20.0-dev"
 
 # For benches
 criterion = "0.5"
@@ -120,3 +122,8 @@ path = "examples/heightmap.rs"
 name = "compare"
 path = "benches/compare/main.rs"
 harness = false
+
+[patch."crates-io"]
+bevy = { git = "https://github.com/bevyengine/bevy.git" }
+bevy_math = { git = "https://github.com/bevyengine/bevy.git" }
+bevy_reflect = { git = "https://github.com/bevyengine/bevy.git" }
